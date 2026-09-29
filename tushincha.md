@@ -114,6 +114,9 @@ class Product(models.Modela):
 class categoriya(models.Model)
 
 
+# html qismida >> 
+
+for i in mahsulot >> {{i.kategoriya_id.name}}
 
 
 
