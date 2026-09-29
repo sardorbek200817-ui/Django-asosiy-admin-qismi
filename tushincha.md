@@ -105,7 +105,7 @@ olib beradi resuls kamroq sarf boladi
 mahsulot = Mahsulot.objects.select_related("kategoriya_id").all()
 
 "kategoriya_id" >>> bu yerda foreinkey orqali boglangan ozgaruvchi nomi 
-yani shu ozgaruvchiga boglangan hamma malumotlarni olib beradi
+yani shu ozgaruvchiga boglangan categoriya ni hamma malumotlarni olib beradi
 
 class Product(models.Modela):
 >> kategoriya_id = foreinkey(categoriya)
