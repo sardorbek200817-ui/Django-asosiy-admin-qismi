@@ -180,7 +180,7 @@ boshqa modellarni ham bitta SQL so'rovi bilan bazadan olib keladi.
 
 
 
-
+k
 
 
 
