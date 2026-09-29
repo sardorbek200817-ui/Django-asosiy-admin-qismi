@@ -76,9 +76,8 @@ hato chiqarmaslik >>>>> if dan farqi if bu tenglab yuborishga qodir try esa shun
 keyingisiga otib ketaver degani
 
 
-7 ]     related_name 
+# 7 ]     related_name 
 
-        
 related_name nima uchun kerak bu teskari boglanish uchun kerak boladi yani bizning 
 olma degan modelimiz bor uni biz mevalar degan kategoriyaga boglashimiz kerak boladi
 foreinkey orqali uni mevalarga boglaymiz related_name shunday iboratki mevalarga bizning olma
@@ -89,9 +88,31 @@ qoyish va uni oddiygina chaqirib olish
 
 #                            MISOL
 
-for i in categoriya.mahsulotlar.all()
+for i in categoriya.mahsulotlar.all() >> html qismi
 
 yani categoriya foreinkey orqali boglagan categoriyamiz mahsulot bu related_name
+
+
+# 8 ]     select_related
+select_related  >>> masalan biz select_related ishlatmay oddiy funksiya orqali masalan 
+kitoblarni muallifi bilan olmoqchi bolsak N+1 problem yuzaga keladi select_related esa buni bartaraf etadi
+yani select_related orqali muallifni kiritsak aynan shu muallifga doir kitoblarni hammasini bita query da 
+olib beradi resuls kamroq sarf boladi
+
+
+#                               MISOL
+
+mahsulot = Mahsulot.objects.select_related("kategoriya_id").all()
+
+"kategoriya_id" >>> bu yerda foreinkey orqali boglangan ozgaruvchi nomi 
+yani shu ozgaruvchiga boglangan hamma malumotlarni olib beradi
+
+class Product(models.Modela):
+      kategoriya_id = foreinkey(categoriya)
+
+
+class categoriya(models.Model)
+
 
 
 
