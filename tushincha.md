@@ -148,16 +148,16 @@ hamma malumotni chaqirib oladi yani bitta model sorovida
 
 < models.py > 
 
-class City(models.Model): >>
-    name = models.CharField(max_length=50)
+class City(models.Model): 
+ >>   name = models.CharField(max_length=50)
 
-class Author(models.Model):>>
-    name = models.CharField(max_length=100)
-    city = models.ForeignKey(City, on_delete=models.CASCADE) # Muallif shaharga bog'langan
+class Author(models.Model):
+>>    name = models.CharField(max_length=100)
+>>   city = models.ForeignKey(City, on_delete=models.CASCADE) # Muallif shaharga bog'langan
 
-class Article(models.Model):>>
-    title = models.CharField(max_length=200)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE) # Maqola muallifga bog'langan
+class Article(models.Model):
+>>    title = models.CharField(max_length=200)
+>>    author = models.ForeignKey(Author, on_delete=models.CASCADE) # Maqola muallifga bog'langan
 
 < views.py >
 
