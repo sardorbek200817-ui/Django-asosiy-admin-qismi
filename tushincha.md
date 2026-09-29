@@ -120,4 +120,28 @@ for i in mahsulot >> {{i.kategoriya_id.name}}
 
 
 
+#   ASOSIY MISOLLAR
+
+#  views.py
+  
+mahsulot = Mahsulot.objects.select_related("kategoriya_id").all()
+
+
+
+#  model.py
+  
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+
+
+class Article(models.Model):
+    title = models.CharField(max_length=200)
+    # Har bir maqola 1 ta avtorga tegishli
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+
+
+ 
+select_releted >> ha demak qaysi model author ga boglangan bolsa shu boglangan modellardagi
+hamma malumotni chaqirib oladi yani bitta model sorovida
+
 
