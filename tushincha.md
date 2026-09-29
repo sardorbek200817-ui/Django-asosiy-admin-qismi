@@ -144,4 +144,45 @@ class Article(models.Model):
 select_releted >> ha demak qaysi model author ga boglangan bolsa shu boglangan modellardagi
 hamma malumotni chaqirib oladi yani bitta model sorovida
 
+# 9 ] select_related
+
+< models.py > 
+
+class City(models.Model):
+    name = models.CharField(max_length=50)
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+    city = models.ForeignKey(City, on_delete=models.CASCADE) # Muallif shaharga bog'langan
+
+class Article(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE) # Maqola muallifga bog'langan
+
+< views.py >
+
+ Maqola, uning muallifi va muallifining shahri — hammasi BITTA SQL so'rovda keladi!
+articles = Article.objects.select_related('author__city').all()
+
+
+< HTMl >
+
+{% for article in articles %}
+{{ article.title }} — Muallif: {{ article.author.name }} ({{ article.author.city.name }} shahridan)
+
+{% endfor %}
+
+# MANOSI
+select_related nimani bajaradi?
+Asosiy modelni va unga ForeignKey yoki OneToOne orqali ulangan
+boshqa modellarni ham bitta SQL so'rovi bilan bazadan olib keladi.
+
+
+
+
+
+
+
+
+
 
