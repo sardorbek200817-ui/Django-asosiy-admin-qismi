@@ -15,16 +15,16 @@ Bitta Category > bir nechta Product
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=50)
-    img = models.ImageField(upload_to='products/img' , blank=True , null=True)
-    category = models.ManyToManyField(to="Category" , related_name="products")
-    unit = models.CharField( UNITS,default='piece')
-    amout = models.IntegerField()
+>>    name = models.CharField(max_length=50)
+>>    img = models.ImageField(upload_to='products/img' , blank=True , null=True)
+>>    category = models.ManyToManyField(to="Category" , related_name="products")
+>>    unit = models.CharField( UNITS,default='piece')
+>>    amout = models.IntegerField()
 
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=30)
+>>    name = models.CharField(max_length=30)
 
 
 bu yerdas agarda     category = models.ManyToManyField(to="Category" , related_name="products")
@@ -60,8 +60,8 @@ modelga ga boshqa bir modelga boglangan boglangan modelning nomi bu relayted_nam
 
 
  def products(request):
-    mahsulot = Kategoriya.objects.first()
-    mahsulot2 = mahsulot.products.all()
+ >>   mahsulot = Kategoriya.objects.first()
+ >>   mahsulot2 = mahsulot.products.all()
 
 bunda Kategorydagi birinchi Kategoryadagi hamma mahsulotlarni olyabmiz  products >>> 'related_name'
 
@@ -131,13 +131,13 @@ mahsulot = Mahsulot.objects.select_related("kategoriya_id").all()
 #  model.py
   
 class Author(models.Model):
-    name = models.CharField(max_length=100)
+>>    name = models.CharField(max_length=100)
 
 
 class Article(models.Model):
-    title = models.CharField(max_length=200)
-    # Har bir maqola 1 ta avtorga tegishli
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+>>    title = models.CharField(max_length=200)
+>>    Har bir maqola 1 ta avtorga tegishli
+>>    author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
 
  
