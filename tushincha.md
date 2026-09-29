@@ -108,7 +108,7 @@ mahsulot = Mahsulot.objects.select_related("kategoriya_id").all()
 yani shu ozgaruvchiga boglangan hamma malumotlarni olib beradi
 
 class Product(models.Modela):
-kategoriya_id = foreinkey(categoriya)
+>> kategoriya_id = foreinkey(categoriya)
 
 
 class categoriya(models.Model)
