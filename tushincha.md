@@ -153,11 +153,11 @@ class City(models.Model):
 
 class Author(models.Model):
 >>    name = models.CharField(max_length=100)
->>   city = models.ForeignKey(City, on_delete=models.CASCADE) # Muallif shaharga bog'langan
+>>    city = models.ForeignKey(City, on_delete=models.CASCADE)
 
 class Article(models.Model):
 >>    title = models.CharField(max_length=200)
->>    author = models.ForeignKey(Author, on_delete=models.CASCADE) # Maqola muallifga bog'langan
+>>    author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
 < views.py >
 
