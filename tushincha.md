@@ -74,8 +74,24 @@ bunda Kategorydagi birinchi Kategoryadagi hamma mahsulotlarni olyabmiz  products
 Yani bu yerda agarda id hatolik bolganda shunchaki except ishlasin deyabdi yani try ning vazifasi
 hato chiqarmaslik >>>>> if dan farqi if bu tenglab yuborishga qodir try esa shunchaki ohshamasa
 keyingisiga otib ketaver degani
-        
 
+
+7 ]     related_name 
+
+        
+related_name nima uchun kerak bu teskari boglanish uchun kerak boladi yani bizning 
+olma degan modelimiz bor uni biz mevalar degan kategoriyaga boglashimiz kerak boladi
+foreinkey orqali uni mevalarga boglaymiz related_name shunday iboratki mevalarga bizning olma
+banan va juda kop mevalar boglangan boladi masalan biz olmanig ozini chaqirib olmoqchimiz
+buning uchun undagi related name dan foydalanamiz related nameni qisqasi modelimizga nom qoyib
+qoyish va uni oddiygina chaqirib olish
+
+
+#                            MISOL
+
+for i in categoriya.mahsulotlar.all()
+
+yani categoriya foreinkey orqali boglagan categoriyamiz mahsulot bu related_name
 
 
 
